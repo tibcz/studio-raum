@@ -1,0 +1,3 @@
+# A team tool, not a website: keep it out of search engines.
+User-agent: *
+Disallow: /

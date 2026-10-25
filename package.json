@@ -1,0 +1,33 @@
+{
+  "name": "studio-raum",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A shared room plan for a studio team. Runs on your own free Cloudflare account.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsx scripts/build.ts",
+    "deploy": "npm run build && wrangler deploy",
+    "serve": "npm run build && wrangler dev --port 4182",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.worker.json && tsc --noEmit -p test/tsconfig.json"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "0.23.0",
+    "@cloudflare/workers-types": "5.20261024.1",
+    "@types/node": "26.6.5",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vite": "8.3.5",
+    "vitest": "4.1.12",
+    "wrangler": "4.152.0"
+  },
+  "allowScripts": {
+    "workerd": true,
+    "esbuild": true
+  }
+}

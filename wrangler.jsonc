@@ -1,0 +1,34 @@
+{
+  // Studio Raum on your own Cloudflare account. Read README.md first.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "studio-raum",
+  "compatibility_date": "2026-08-26",
+  "main": "worker/index.ts",
+
+  // Your copy answers at https://studio-raum.<your-subdomain>.workers.dev.
+  // To use your own domain, add it in Cloudflare under the Worker's Settings, Domains & Routes.
+  "workers_dev": true,
+  "preview_urls": false,
+
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*", "/privacy", "/legal"]
+  },
+
+  "durable_objects": {
+    "bindings": [
+      { "name": "TEAM", "class_name": "StudioTeamDO" },
+      { "name": "RATE_GATE", "class_name": "RateGateDO" },
+      { "name": "INSTANCE", "class_name": "InstanceDO" }
+    ]
+  },
+
+  // Never remove or rename these entries: Cloudflare would delete the stored teams.
+  "migrations": [
+    { "tag": "v1", "new_sqlite_classes": ["StudioTeamDO", "RateGateDO", "InstanceDO"] }
+  ],
+
+  // Request logs would hold your team's IP addresses. They stay off.
+  "observability": { "enabled": false }
+}

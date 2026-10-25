@@ -1,0 +1,27 @@
+name: Update Studio Raum
+# Fetches the newest Studio Raum into your copy. Cloudflare then puts it online by itself.
+# Run it by hand: Actions, "Update Studio Raum", "Run workflow".
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    if: github.repository != 'tibcz/studio-raum'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Merge the newest version
+        run: |
+          git config user.name "Studio Raum update"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          export NAME_LINE="$(grep -m1 '"name":' wrangler.jsonc)"
+          git remote add upstream https://github.com/tibcz/studio-raum.git
+          git fetch upstream main
+          git merge --no-edit --allow-unrelated-histories -X theirs upstream/main
+          # Keep the Worker name you chose; another name would mean a new, empty Studio Raum.
+          node -e 'const fs = require("fs"); const t = fs.readFileSync("wrangler.jsonc", "utf8"); fs.writeFileSync("wrangler.jsonc", t.replace(/^[ \t]*"name":.*$/m, process.env.NAME_LINE));'
+          git diff --quiet || git commit -am "Keep the Worker name"
+          git push

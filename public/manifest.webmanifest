@@ -1,0 +1,18 @@
+{
+  "name": "Studio Raum",
+  "short_name": "Studio Raum",
+  "description": "The shared room plan for your studio.",
+  "lang": "en",
+  "start_url": "/",
+  "scope": "/",
+  "id": "/",
+  "display": "standalone",
+  "background_color": "#EFEDE8",
+  "theme_color": "#171F2E",
+  "categories": ["productivity", "business"],
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

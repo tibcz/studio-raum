@@ -1,6 +1,4 @@
-// Privacy policy (/privacy) and legal notice (/legal) of a self-hosted copy. They are rendered from
-// the details the operator entered during setup, so every copy names its own operator. German is
-// binding; the English translation follows on the same page.
+// /privacy and /legal of a self-hosted copy, filled with its operator's details; German is binding, English follows.
 import type { Operator } from "./do/instance";
 
 type Lang = "de" | "en";

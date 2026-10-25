@@ -5,8 +5,7 @@
   "compatibility_date": "2026-08-26",
   "main": "worker/index.ts",
 
-  // Your copy answers at https://studio-raum.<your-subdomain>.workers.dev.
-  // To use your own domain, add it in Cloudflare under the Worker's Settings, Domains & Routes.
+  // Your copy answers at studio-raum.<your-subdomain>.workers.dev; add your own domain under Settings, Domains & Routes.
   "workers_dev": true,
   "preview_urls": false,
 

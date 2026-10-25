@@ -10,8 +10,7 @@ export class ApiError extends Error {
   }
 }
 
-// The build for sr.tbor.app sets VITE_SR_DEMO=1: the app then shows a generated team and never
-// talks to a server. Self-hosted builds leave it unset.
+// VITE_SR_DEMO=1 (the build for sr.tbor.app) shows a generated team and never talks to a server.
 export const DEMO = import.meta.env.VITE_SR_DEMO === "1";
 
 export const DEMO_MESSAGE = "This is a demo, so nothing can be changed or saved. Build your own Studio Raum to book rooms.";

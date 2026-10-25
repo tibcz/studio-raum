@@ -1,5 +1,4 @@
-// A made-up team for the demo at sr.tbor.app. Everything is generated in the browser on each visit;
-// nothing is sent to a server and nothing is stored.
+// A made-up team for the demo at sr.tbor.app, generated in the browser on each visit and never sent or stored.
 import type {
   ActivityEvent, AppNotification, Booking, BookingRequest, BookingState, DayRequest,
   StandingRule, Studio, TeamMember, TeamSnapshot,

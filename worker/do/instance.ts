@@ -1,8 +1,6 @@
 import { DurableObject } from "cloudflare:workers";
 
-// One object per copy of Studio Raum ("instance"). It holds what belongs to the copy rather than to a
-// team: the secrets the server needs, the details of whoever runs the copy, and which teams exist.
-// A self-hosted copy needs no secrets configured: the first request generates them here.
+// One object per copy of Studio Raum: its generated keys, the operator's details and which teams exist.
 
 export interface Operator {
   name: string;

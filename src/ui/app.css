@@ -717,7 +717,6 @@ a.list-item { text-decoration: none; }
 .cal-reserved { background: color-mix(in srgb, var(--reserved) 16%, var(--surface)); color: var(--reserved); }
 .cal-occupied { background: color-mix(in srgb, var(--occupied) 16%, var(--surface)); color: var(--occupied); }
 
-/* Bars shrink with the cell, so a team with many rooms never pushes the month wider than the screen. */
 .cal-bars { display: flex; gap: 2px; width: 100%; max-width: 100%; justify-content: center; min-width: 0; }
 .cal-bar { flex: 0 1 8px; min-width: 2px; height: 5px; border-radius: 2px; display: block; }
 .bar-cal-free { background: var(--free); }
@@ -867,7 +866,6 @@ a.list-item { text-decoration: none; }
   }
 }
 
-/* Demo build for sr.tbor.app only (VITE_SR_DEMO=1). */
 .demo-strip {
   display: flex;
   align-items: center;
